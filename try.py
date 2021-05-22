@@ -1,9 +1,9 @@
 import pandas
 import numpy
 import cv2
-import face_recognitions
+import face_recognition
 
-print('helloworld')
+'''print('helloworld')
 img = cv2.imread('/home/victor/Pictures/tree_linux.png')
 cv2.imshow('image',img)
 
@@ -15,7 +15,8 @@ while True:
 
 #import cv2
 
-'''cap = cv2.VideoCapture(0)
+'''
+cap = cv2.VideoCapture(0)
 
 # Check if the webcam is opened correctly
 if not cap.isOpened():
@@ -31,4 +32,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows()'''
+cv2.destroyAllWindows()
