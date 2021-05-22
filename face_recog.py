@@ -5,7 +5,7 @@ import face_recognition
 imgElon = face_recognition.load_image_file('imgs/elon_musk.jpg')
 imgElon = cv2.cvtColor(imgElon,cv2.COLOR_BGR2RGB)
 
-imgtest = face_recognition.load_image_file('imgs/elon_test.jpeg')
+imgtest = face_recognition.load_image_file('imgs/gates.jpg')
 imgtest = cv2.cvtColor(imgtest,cv2.COLOR_BGR2RGB)
 
 
@@ -22,7 +22,10 @@ cv2.rectangle(imgtest,(faceloctest[3],faceloctest[0]),(faceloctest[1],faceloctes
 
 cv2.imshow('elon_musk',imgElon)
 cv2.imshow('test',imgtest)
-#cv2.waitKey(20000)
+
+#Results comparison
+results = face_recognition.compare_faces([encodeElon],encodetest)
+print(results)
 
 while True:
 	c = cv2.waitKey(1)
