@@ -20,12 +20,17 @@ encodetest = face_recognition.face_encodings(imgtest)[0]
 cv2.rectangle(imgElon,(faceloc[3],faceloc[0]),(faceloc[1],faceloc[2]),(255,0,255),2)
 cv2.rectangle(imgtest,(faceloctest[3],faceloctest[0]),(faceloctest[1],faceloctest[2]),(255,0,255),2)
 
-cv2.imshow('elon_musk',imgElon)
-cv2.imshow('test',imgtest)
-
 #Results comparison
 results = face_recognition.compare_faces([encodeElon],encodetest)
 facedist = face_recognition.face_distance([encodeElon],encodetest)
+
+##write text upon location face
+cv2.putText(imgtest,f'{results[0]} {round(facedist[0],2)}',(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255),2)
+
+cv2.imshow('elon_musk',imgElon)
+cv2.imshow('test',imgtest)
+
+
 print(results,facedist)
 
 while True:
