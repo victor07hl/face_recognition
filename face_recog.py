@@ -25,7 +25,8 @@ cv2.imshow('test',imgtest)
 
 #Results comparison
 results = face_recognition.compare_faces([encodeElon],encodetest)
-print(results)
+facedist = face_recognition.face_distance([encodeElon],encodetest)
+print(results,facedist)
 
 while True:
 	c = cv2.waitKey(1)
