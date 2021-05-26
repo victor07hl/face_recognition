@@ -37,14 +37,16 @@ def decoding(user = 'main_user'):
 	names = list(df['name'])
 	encodeListKnow = []
 	for name in names:
-		encodeListKnow.append(df.loc[name]['encoding'])
+		encod = df.loc[name]['encoding']
+		encodfloat = [float(cod) for cod in encod[1:len(encod)-1].split(', ')]
+		encodeListKnow.append(encodfloat)
 
-	print(f"user registered : {', '.join(names)}")
+	print(f"users registered : {', '.join(names)}")
 	return names,encodeListKnow
 
 
 if __name__ == '__main__':
-	encoding()
-	decoding()
+	name,encod=decoding()
+	print(encod[0][0])
 
 
