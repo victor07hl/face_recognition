@@ -20,12 +20,31 @@ def encoding(path_imgs = 'imgs/train',name_outcsv = 'encode_imgs', user = 'main_
 
 	data = list(zip(names_imgs,img_encods))
 	df_encod = pd.DataFrame(data, columns = ['name','encoding'],index = names_imgs)
-	os.mkdir(user) #this line will be removed when use cloud
+	try:
+		os.mkdir(user) #this line will be removed when use cloud
+	except FileExistsError:
+		print(f'folder {user} already created')
 	df_encod.to_csv(user+'/'+name_outcsv,sep=',',header=True)
 	tf = datetime.now()
 	print((tf-ti).microseconds)
 	#print(df_encod)
 	return df_encod
 
-encoding()
+
+
+def decoding(user = 'main_user'):
+	df = pd.read_csv(user+'/encode_imgs', index_col = 'Unnamed: 0')
+	names = list(df['name'])
+	encodeListKnow = []
+	for name in names:
+		encodeListKnow.append(df.loc[name]['encoding'])
+
+	print(f"user registered : {', '.join(names)}")
+	return names,encodeListKnow
+
+
+if __name__ == '__main__':
+	encoding()
+	decoding()
+
 
