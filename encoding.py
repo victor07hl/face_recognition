@@ -9,10 +9,10 @@ def encoding(path_imgs = 'imgs/train',name_outcsv = 'encode_imgs', user = 'main_
 	ti = datetime.now()
 	names_imgs = []
 	img_encods = []
-	list_img= os.listdir(path_imgs)
-	#print(list_img)
+	list_img= os.listdir(user+'/'+path_imgs)
+	print(list_img)
 	for img_name in list_img:
-		img_read = cv2.imread(f'{path_imgs}/{img_name}')
+		img_read = cv2.imread(f'{user}/{path_imgs}/{img_name}')
 		img_encod = list(face_recognition.face_encodings(img_read)[0])
 		img_encods.append(img_encod)
 		names_imgs.append(os.path.splitext(img_name)[0])
@@ -46,7 +46,8 @@ def decoding(user = 'main_user'):
 
 
 if __name__ == '__main__':
-	name,encod=decoding()
-	print(encod[0][0])
+	#name,encod=decoding()
+	encoding()
+	
 
 
