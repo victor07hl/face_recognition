@@ -3,9 +3,18 @@ import numpy
 import cv2
 import face_recognition
 
-'''print('helloworld')
+print('helloworld')
 img = cv2.imread('/home/victor/Pictures/tree_linux.png')
+imgreshape = img[156:740,460:800,:]
+
 cv2.imshow('image',img)
+cv2.imshow('reshaed',imgreshape)
+
+user = 'main_user'
+pathimg = f'{user}/unknownfaces/{2}.jpg'
+cv2.imwrite(pathimg,img)
+print('img original',img.shape)
+print('img reshape',imgreshape.shape)
 
 while True:
 	c = cv2.waitKey(1)
@@ -15,6 +24,7 @@ while True:
 
 #import cv2
 
+
 '''
 cap = cv2.VideoCapture(0)
 
@@ -22,7 +32,7 @@ cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     raise IOError("Cannot open webcam")
 
-while True:
+while True :
     ret, frame = cap.read()
     frame = cv2.resize(frame, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
     cv2.imshow('Input', frame)
@@ -32,4 +42,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() '''
