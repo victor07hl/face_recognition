@@ -11,6 +11,13 @@ of camera is previusly registered, if not the program save the unknow person ima
 On the master branch are the files.py for save unkonwn imgs on local machine.
 The other branches are created for each cloud either azure, aws, gcp.
 
+Libreries:
+face_recognition : $pip install face-recognition
+opencv : $pip install opencv-python
+numpy : $pip install numpy
+pandas : $pip install pandas
+
+Also you can install this libraries and run the files on your Anaconda enviroment
 
 Folder project
  subfolder descriptions:
