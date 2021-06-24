@@ -23,7 +23,7 @@ Folder project
  subfolder descriptions:
     -'main_user' : Contain 2 subfolders and 1 file named encode_imgs
     -'main_user/imgs/train' : This folder has all imgs for user that you want
-                             to register. The img name should be the name of user.
+                             to register. The img name must be the name of user.
     -'main_user/unknonwnfaces' : This folder has all imgs for unknown persons. The 
                                 program put this imgs automatically on this folder
  
